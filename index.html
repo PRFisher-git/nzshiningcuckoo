@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .row-section {
+            margin-bottom: 3rem;
+        }
+
+        .row-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--shadow);
+            padding-bottom: 0.5rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow);
+            transition: transform 0.2s ease;
+        
+        }
+
+        .img-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .img-wrapper img:hover {
+            transform: scale(1.05);
+        }
+
+        .legend {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Lightbox Overlay styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-align: center;
+            border-radius: 4px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 100px;
+            right: 320px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 1024px) {
+            .image-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .image-grid { grid-template-columns: repeat(2, 1fr); }
+            body { padding: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .image-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<h1>NZ Shining Cuckoo | <I>Chalcites lucidus</I> Photo gallery for ageing and sexing</h1>
+
+  <p>Select each image to view in more detail and close (X) to return to the main page. All images Paul R. Fisher ©</p>
+
+    <div class="gallery-container">
+</div> 
+<!-- Row 1 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">Characters for distinguishing male and female Shining Cuckoos</h2>
+              <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/male-a.jpg" 
+alt="Iris"></div>
+                    <div class="legend">Age 2+ male with extensive green plumage on nape and back</div>      
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/mtail-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Age 2+ male with prominent white spots on rectrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/mabsa-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">ABSA species guide male rectrix ventral view</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/female-d.jpg"
+alt="Underwing"></div>
+               <div class="legend">Age 2+ female with bronze plumage on nape and back</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/ftail-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Age 2+ female with rufus flashes on rectrix R4</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/fabsa-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">ABSA species guide female rectrix ventral view R4</div>
+                </div>
+                </div>
+             <p>Notes: Other characters including the extent of white on the head and colour of orbital ring can be used to sex cuckoos but variable and require further study to validate.The colour and degree of white spots and rufus flashes is highly variable so a range of criteria should be used to sex birds.</p>
+<p>Refer to the Australian Bird Study Association species guide for more information on ageing and sexing</p><a href="https://absa.asn.au/wp-content/uploads/2016/12/Shining-Bronze-Cuckoo-1.pdf">Bronze Shining Cuckoo</a>
+
+          </div>
+          </div> 
+        <!-- Row 2 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29403 Male age 1+, Nelson, October 2025</h2>
+              <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-a.jpg" 
+alt="Iris"></div>
+                    <div class="legend">Pale iris colour and moult around the orbital ring</div>      
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Green iridescent head with white flecks</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Uniform wear across primaries and coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-d.jpg"
+alt="Underwing"></div>
+               <div class="legend">Same generation primaries with similar dark shafts and wear</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Pale grey underwing coverts</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29403-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Dorsal view of white spots on rectrix R4</div>
+                </div>
+                </div>
+             <p>Notes: age (1+) uncertain with the pale lower mandible and head moult around the orbital in October</p>
+
+          </div>
+ <!-- Row 3 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29402 Female age 1+, Nelson, October 2025</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-a.jpg" 
+alt="Iris"></div>
+                    <div class="legend">Pale iris colour</div>
+                  </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Bronze tinge flecks on head</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Secondaries and tertials similar feather wear</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Uniform primary coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Pale grey underwing coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29402-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Dorsal view of rufus flashes on rectrix R4</div>
+                </div>
+                </div>
+             <p>Notes: potentially a second year bird with lower mandible partially melanised and patchy head plumage</p>
+
+          </div>
+
+ </div>
+ <!-- Row 4 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29441 Juvenile Female, Nelson, Janauary 2026</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-a.jpg" alt="Iris"></div>
+                    <div class="legend">Dark iris colour, partially melanised lower mandible and pale yellow-grey gape and orbital ring</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Fresh primary coverts and primaries with unifom wear</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Dark brown underwing coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Ventral rufus flashes on rectrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Dorsal faint rufus flash on rectrix R4</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29441-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Brown tinges to head, no white flecks</div>
+                </div>
+                </div>
+             <p>Notes: juvenile with pale lime yellow tinge to underbelly and less distinct bars from chest to the throat </p>
+
+</div>
+ <!-- Row 5 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29424 Juvenile Male, Nelson, Janauary 2026</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-a.jpg" alt="Iris"></div>
+                    <div class="legend">Dark iris colour, partially melanised lower mandible green tinged head</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Fresh primary coverts and primaries with unifom wear</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Dark grey underwing coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Ventral white spots on retrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Dorsal white spots on rectrix R4</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29424-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Green tinges to head with fine white fleck</div>
+                </div>
+                </div>
+             <p>Notes: juvenile with pale lime yellow tinge to underbelly and less distinct bars from chest to the throat </p>
+
+
+          </div>
+</div>
+ <!-- Row 6 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">Examples of standard lighting photographs (window strike cuckoo)</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-a.jpg" alt="Iris"></div>
+                    <div class="legend">Iridescent bronze head and nape, fully dark melanised bill</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Left wing secondaries and greater coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Right wing secondaries and greater coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Primary coverts and primaries</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Primary coverts and four alulae</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Ventral rufus flashes on rectrix R4</div>
+                </div>
+<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-g.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Dorsal rufus flashes on rectrix R4</div>
+                </div>
+<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-h.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Matt brown under wing coverts</div>
+                </div>
+<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-i.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Guide to standard photos for adult birds</div>
+                </div>
+<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/lb-j.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Guide to standard photos for juvenile birds</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29418-a.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">BP29418 age 1+ male photographed in shade</div>
+</div>
+<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29418-b.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">BP29418 age 1+ male photographed in sunlight showing plumage irridesence</div>
+</div>
+</div>
+  <p>Notes: Light box images with Smallrig LED and 20% grey background following the guidance by</p><a href="https://doi.org/10.1080/03078698.2025.2607079">Klaassen et al., 2025</a>
+          </div>
+   </div>
+<!-- Row 7 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">Feather numbers, wing and tail moult sequence</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-a.jpg" alt="Iris"></div>
+                    <div class="legend">Moult progresses independently from multiple nodes, P1, P6 and P10</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-c.jpg" alt="Remiges"></div>
+                    <div class="legend">Secondary and tertial feather numbers and moult sequence</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-d.jpg" alt="Secondaries"></div>
+                    <div class="legend">Four alulae feather numbers and moult sequence</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-b.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Moult nodes at rectrix 1(inner feather, R1) and rectix 5, moulting inwards to R1</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Ventral apteria, refer to the guide on describing a brood patch</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/moult-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Museums measure bill width from infront of the nostril </div>
+                </div>
+                </div>
+             <p>Notes: refere to the Shining Cuckoo Project guide for more details on assessing moult and morphometrics for ageing and sexing birds</p>
+</div>
+</div>
+<!-- Row 8 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">Examples of moult phenotypes in cuckoos</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29407-m.jpg" 
+alt="Iris"></div>
+                    <div class="legend">Dark rachis on primaries P6 to P9 indicate recently replaced and suspended moult</div>
+                 </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29437-m.jpg" 
+alt="Remiges"></div>
+                    <div class="legend">Older generation worn primaries visible at P4 and P9 (right) and P4 and P7 (left wing)</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29447-m.jpg" 
+alt="Secondaries"></div>
+                    <div class="legend">Juvenile growing primary P8 only on left wing, adventitious moult</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-m.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Primary coverts PC3 to PC7 older worn feathers, suspended moult</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-m2.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Right wing secondary S3 older worn feather, suspended moult</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-m3.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Left wing secondaries S3 and S6 older worn feathers, suspended moult</div>
+                </div>
+                </div>
+             <p>Notes: refere to the Shining Cuckoo Project guide for more details on assessing moult and morphometrics for ageing and sexing birds</p>
+</div>
+   </div>
+<!-- Row 9 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">Feather replacement and moult in rectices</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29405-a.jpg" alt="Iris"></div>
+                    <div class="legend">BP29405 age 1+, male with white spots and faint rufus flashes on rectrix R4</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29437-b.jpg" alt="Remiges"></div>
+                    <div class="legend">BP29437 age 1+, female with white and faint rufus flashes on rectrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-f.jpg" alt="Secondaries"></div>
+                    <div class="legend">BP29401 age 1+ male, no white spots on rectrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29452-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">BP29452 juvenile female, rufus flashes on rectix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29438-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Juvenile male, replacing left rectrices R3 to R5</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29418-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">BP29418 age 1+ male, left rectrix R3 old, right R4 damaged</div>
+                </div>
+                </div>
+             <p>Notes: Care is required to distinguish between adventious feather loss/replacement and moult of rectrices. Feather wear and loss is highly varialble in juvenil and older birds. Outer replacement feathers typically have relatively larger white terminal spots than adjacent feathers</p>
+</div>
+</div>
+<!-- Row 10 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29401 Male age 1+, Nelson, October & December 2025</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-a.jpg" alt="Iris"></div>
+                    <div class="legend">Pale iris colour</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Secondary feather wear, December 2026</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">S6 retained, October 2026</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Dark grey underwing coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Well defined terminal white spot outer rectrix</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29401-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">No white spots on rectrix R4</div>
+                </div>
+                </div>
+             <p>Notes: potentially a second year bird with worn inner and outer secondaries and no defined spots on rectrix 4</p>
+</div>
+</div>
+<!-- Row 11 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29458 Juvenile Female, Nelson, January 2026</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-a.jpg" alt="Iris"></div>
+                    <div class="legend">Juvenile plumage with bronze tinges on the nape</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Juvenile dark iris with pale gape and lower mandible</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Primary feathers showing wear to tips and leading edges</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Extensive wear to secondary feathers</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Under wing showing wear to secondaries and dark brown undercoverts</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29458-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Dorsal view of rectrices with pale rufus flashes to rectrix 4</div>
+                </div>
+                </div>
+             <p>Notes: potentially an early fledgling with extensive wear to remiges</p>
+</div>
+</div>       
+	<!-- Row 12 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29455 Second Year Female (TBC) with immature characters; dark iris, melanised bill and incomplete (post juvenile) moult, Nelson, January 2026</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-a.jpg" alt="Iris"></div>
+                    <div class="legend">Juvenile dark iris and with fully melanised bill (3+ months old)</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Head and body with brown colouring</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Intermediate plumage - well defined chest bars but dappled cheek (juvenile)</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Wrinkeld (residual) brood patch but no engorgment</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-h.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Left wing fresh (darker) primary coverts PC1-2 and PC8-10, juvenile greater covert 1</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-e.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Right wing fresh (darker) primary coverts PC1-2 and PC8-10</div>
+                </div>
+                </div>
+                             <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-g.jpg" 
+alt="Iris"></div>
+                    <div class="legend">Left wing, primaries P1 and P2 fresh, secondary S3 worn (juvenile)</div>
+                  </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-f.jpg" alt="Remiges"></div>
+                    <div class="legend">Right wing, all primaries show wear to tips, P3 and P6 most faded brown (juvenile)</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-i.jpg" alt="Secondaries"></div>
+                    <div class="legend">Age 1+ with pale white belly and well defined bars</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-j.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Dorsal left rectrices, pale rufus flashes to rectrix R4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-k.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Ventral right rectrcies, R5 and R4 replaced with larger terminal white spots</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29455-l.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Ventral left rectrices with pale rufus flashes to rectrix R4 and rectrix R1 growing in (shorter)</div>
+                </div>
+                </div>
+             <p>Notes: more study required to confirm the age and plumage characteristics</p>
+</div>
+</div>          
+
+<!-- Row 13 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29420 Juvenile/Second Year Female with immature characters, Nelson, December 2025</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-a.jpg" alt="Iris"></div>
+                    <div class="legend">Juvenile dark iris and with partially melanised lower mandible</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Head and body with brown colouring</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Chest with defined bars becoming mottled on the cheeks</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Consistent wear across greater coverts and secondaries</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Simiar feather wear across remiges, primary P8 with the most wear to the tip</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29420-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Ventral left rectrices with pale rufus flashes to rectrix R4 and rectrix R1 growing in (shorter)</div>
+                </div>
+                </div>
+             <p>Notes: more study required to confirm the age and plumage characteristics of post juvenile birds</p>
+            </div>
+</div><!-- Row 14 -->
+        <div class="row-section">
+            <h2 class="row-subtitle">BP29435 Juvenile/Second Year Female with immature characters, Nelson, January 2026</h2>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-a.jpg" alt="Iris"></div>
+                    <div class="legend">Juvenile dark iris and with fully melanised bill (early fledgling+)</div>
+                    
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-b.jpg" alt="Remiges"></div>
+                    <div class="legend">Head and body with brown colouring</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-c.jpg" alt="Secondaries"></div>
+                    <div class="legend">Primary coverts with similar feather wear, slight colour fade to outer coverts</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-d.jpg"
+ alt="Underwing"></div>
+               <div class="legend">Slight feather wear to primary 8 (right) and primary 7 (left- not shown)</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-e.jpg" 
+alt="Rectrices dorsal"></div>
+                    <div class="legend">Slight feather wear to secondaries S2 and S3</div>
+                </div>
+            	<div class="gallery-item">
+                    <div class="img-wrapper"><img src="Gallery0/BP29435-f.jpg" 
+alt="Rectrices ventral"></div>
+                    <div class="legend">Ventral left rectrices with pale rufus flashes to rectrix R4 and rectrix R1 growing in (shorter)</div>
+                </div>
+                </div>
+             <p>Notes: more study required to confirm the age and plumage characteristics of post juvenile birds</p>
+            </div>
+           </div>
+
+<div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImg" src="" alt="Enlarged view">
+    	</div>
+
+    	<script>
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        galleryItems.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
